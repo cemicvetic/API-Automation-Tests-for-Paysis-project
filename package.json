@@ -1,0 +1,39 @@
+{
+  "name": "paysis-tests",
+  "version": "1.0.0",
+  "description": "REST API automated tests for Paysis project",
+  "scripts": {
+    "test": "jest",
+    "format": "prettier ./ --write --list-different",
+    "lint": "prettier ./ --check"
+  },
+  "author": "Svetlana Komarova",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "7.22.5",
+    "axios": "1.4.0",
+    "babel-plugin-module-resolver": "5.0.0",
+    "dotenv": "16.3.1",
+    "jest": "29.5.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.2",
+    "prettier": "2.8.8"
+  },
+  "jest": {
+    "maxWorkers": 1,
+    "transform": {
+      "\\.[jt]sx?$": "babel-jest"
+    },
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "<rootDir>"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/specs/example.spec.js"
+    ]
+  }
+}
